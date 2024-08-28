@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: serif;
+  font-weight: 300;
+  font-style: normal;
+  background-color: rgb(255, 241, 223);
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10000;
+}
+
+.bg-nav {
+  background-color: rgb(255, 255, 255);
+  border-bottom: solid 1px #000000;
+}
+
+.navbar-collapse {
+  justify-content: end;
+}
+
+.nav-text {
+  margin-left: 40px;
+  color: #000000;
+}
+
+.nav-textlink {
+  color: #000000;
+  font-size: small;
+}
+
+.nav-item {
+  text-align: center;
+  margin-left: 30px;
+}
+
+.nav-ul {
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.container .top-img {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+.container .top-img .seribune {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 80%;
+}
+.container .news .news-name {
+  font-size: calc(10px + 1.2vw);
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+.container .news .news-name .kamome {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 30%;
+}
+.container .news-content {
+  padding: 40px 10px;
+  display: block;
+  justify-content: left;
+}
+.container .news-content .news-text {
+  margin-top: 20px;
+  text-align: center;
+}
+.container .news-content .link-color {
+  color: #000000;
+}
+.container .kyoukai .news-name {
+  font-size: calc(10px + 1.2vw);
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+.container .kyoukai .news-name .kamome {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 30%;
+}
+.container .kyoukai-content {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.container .kyoukai-content .kyoukai-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 60%;
+}
+.container .kyoukai-content .kyoukai-text {
+  padding: 40px 10px;
+  text-align: center;
+  font-size: calc(10px + 0.5vw);
+}
+.container .active .kyoukai .news-name {
+  font-size: calc(10px + 1.2vw);
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+.container .active .kyoukai .news-name .kamome {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 30%;
+}
+.container .active .active-content {
+  border-bottom: dotted 1px #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0px;
+}
+.container .active .active-content .taikai {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 25%;
+}
+.container .active .active-content .active-text {
+  text-align: left;
+  font-size: calc(10px + 0.5vw);
+  margin-left: 20px;
+}
+.container .active .active-content1 {
+  border-bottom: dotted 1px #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 10px 40px 20px;
+}
+.container .active .active-content1 .taikai1 {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 25%;
+}
+.container .active .active-content1 .active-text1 {
+  text-align: left;
+  font-size: calc(10px + 0.5vw);
+  margin-left: 20px;
+}
+.container .active .active-content2 {
+  border-bottom: dotted 1px #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 50px 40px 0;
+}
+.container .active .active-content2 .taikai2 {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 25%;
+}
+.container .active .active-content2 .active-text2 {
+  text-align: left;
+  font-size: calc(10px + 0.5vw);
+  margin-left: 20px;
+}
+.container .ivent {
+  margin-top: 70px;
+}
+.container .ivent .kyoukai .news-name {
+  font-size: calc(10px + 1.2vw);
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+.container .ivent .kyoukai .news-name .kamome {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 30%;
+}
+.container .ivent .btn-ivent {
+  display: flex;
+  justify-content: center;
+  padding: 50px 30px;
+}
+
+footer {
+  height: 80%;
+  background-color: rgb(255, 255, 255);
+  border-top: solid 1px #000000;
+}
+footer .ft-sns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+footer .ft-sns .sns {
+  font-size: calc(5px + 1.2vw);
+  color: dimgray;
+}
+footer .ft-sns .sns-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 30px;
+  margin-left: 30px;
+}/*# sourceMappingURL=seribune.css.map */
