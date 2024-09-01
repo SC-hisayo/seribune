@@ -32,7 +32,7 @@
     <nav class="navbar navbar-expand-md bg-nav" data-bs-theme="dark">
       <div class="container-xl">
         <a class="navbar-brand nav-text" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-          <h1><?php bloginfo('name'); ?></h1>
+          <h1 class="fs-2"><?php bloginfo('name'); ?></h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
           aria-controls="navbar" aria-expanded="false" aria-label="ナビゲーションの切替">
@@ -59,4 +59,5 @@
         </div>
       </div>
     </nav>
+
   </header>
