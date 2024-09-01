@@ -50,6 +50,7 @@
     </div>
 
     <div class="active" id="active">
+
       <div class="kyoukai">
         <h2 class="news-name">
           <img src="<?php echo get_template_directory_uri(); ?>/images/wave_kamome_line_1979-1.png" alt="" class="kamome">
@@ -57,36 +58,21 @@
           <img src="<?php echo get_template_directory_uri(); ?>/images/wave_kamome_line_1979-1.png" alt="" class="kamome">
         </h2>
       </div>
-      <div class="active-content">
-        <img src="./S__41877524.jpg" alt="" class="taikai">
-        <p class="active-text">
-          【水俣市競り舟大会】<br>
-          2024年度で49回目を迎えた伝統ある大会市が主催し当協会は主管として参加。
-        </p>
-      </div>
+      
+      <?php if (have_posts( )) : ?>
+        <?php while (have_posts()) : the_post(); ?>
+          <div class="active-content">
+            <a href="<?php the_permalink(); ?>">
+              <?php the_post_thumbnail(); ?>
+              <p class="active-text"><?php the_title(); ?></p>
+              <p class="active-text"><?php the_content(); ?></p>
+            </a>
+          </div>
+        <?php endwhile; ?>
+      <?php else : ?>
+        <p>記事がありません</p>
+      <?php endif; ?>
 
-      <div class="active-content1">
-        <img src="./ミニドラ.jpg" alt="" class="taikai1">
-        <p class="active-text1">
-          【ミニドラゴンカップ】<br>
-          2022年度より競り舟、ドラゴンSUPを使用した４人制のレースを水俣川で実施。<br>
-          (補員含め５人までエントリー可) <br>
-          2022年：65名参加(16チーム) <br>
-          2023年：100名参加(24チーム) <br>
-          キッチンカー３台でマルシェも実施 <br>
-
-        </p>
-      </div>
-
-      <div class="active-content2">
-        <img src="./体験会.jpg" alt="" class="taikai2">
-        <p class="active-text2">
-          【練習会・体験会】<br>
-          練習会：週に１～２度開催(水・土) <br>
-          体験会：不定期に開催 　　10月7日に水俣在住の外国人向けイベント実施 <br>
-
-        </p>
-      </div>
     </div>
 
     <div class="ivent" id="ivent">
