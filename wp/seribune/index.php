@@ -58,8 +58,8 @@
           <img src="<?php echo get_template_directory_uri(); ?>/images/wave_kamome_line_1979-1.png" alt="" class="kamome">
         </h2>
       </div>
-      
-      <?php if (have_posts( )) : ?>
+
+      <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
           <div class="active-content">
             <a href="<?php the_permalink(); ?>">
@@ -86,9 +86,15 @@
       </div>
 
       <div class="d-grid gap-2 col-6 mx-auto btn-ivent">
-        <button class="btn btn-info" type="button">Minamata Paddle Festival</button>
-        <button class="btn btn-info" type="button">ミニドラゴンカップ</button>
-        <button class="btn btn-info" type="button">体験会</button>
+
+        <?php if (have_posts()) : ?>
+          <?php while (have_posts()) : the_post(); ?>
+            <a class="btn btn-info" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+          <?php endwhile; ?>
+        <?php else : ?>
+          <p>記事がありません</p>
+        <?php endif; ?>
+
       </div>
     </div>
 
