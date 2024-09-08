@@ -70,6 +70,9 @@ header {
     display: flex;
     justify-content: center;
   }
+  #ivent {
+    margin-bottom: 50px;
+  }
 }
 
 .box {
@@ -86,24 +89,24 @@ header {
   }
   .content {
     margin-top: 50px;
-    ul {
-      margin-bottom: 20px;
+    .content-text {
+      padding: 0 100px;
+      @media screen and (max-width: 768px) {
+        padding: 0;
+      }
     }
     li {
       list-style: none;
       margin-bottom: 20px;
-    }
-    li:last-child {
-      margin-bottom: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
     a {
       color: #000000;
     }
     p {
       margin-top: 50px;
-    }
-    &:last-child {
-      margin-bottom: 50px;
     }
   }
 }
@@ -113,7 +116,8 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 10px 40px 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   .panel-image {
     object-fit: cover;
     width: 25%;

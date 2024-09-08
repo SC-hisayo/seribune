@@ -61,13 +61,15 @@ header {
   justify-content: center;
 }
 .container .top-img img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 80%;
 }
 .container section {
   display: flex;
   justify-content: center;
+}
+.container #ivent {
+  margin-bottom: 50px;
 }
 
 .box {
@@ -80,15 +82,19 @@ header {
 }
 .box .session-title-bg {
   margin: 0 10px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 30%;
 }
 .box .content {
   margin-top: 50px;
 }
-.box .content ul {
-  margin-bottom: 20px;
+.box .content .content-text {
+  padding: 0 100px;
+}
+@media screen and (max-width: 768px) {
+  .box .content .content-text {
+    padding: 0;
+  }
 }
 .box .content li {
   list-style: none;
@@ -103,20 +109,17 @@ header {
 .box .content p {
   margin-top: 50px;
 }
-.box .content:last-child {
-  margin-bottom: 50px;
-}
 
 .panel {
   border-top: dotted 1px #000000;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 10px 40px 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 .panel .panel-image {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 25%;
 }
 .panel .panel-body {
@@ -144,8 +147,9 @@ footer .ft-content .ft-title {
   color: dimgray;
 }
 footer .ft-content .sns-img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 30px;
   margin-left: 30px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
