@@ -12,7 +12,7 @@
             <p>更新日: <time datetime="<?php the_modified_time('Y-m-d'); ?>"><?php the_modified_date(); ?></time></p>
             <p><?php the_category(', '); ?></p>
           </div>
-          <p><?php the_content('Read more'); ?></p>
+          <?php the_content('Read more'); ?>
         <?php endwhile; ?>
       <?php endif; ?>
 
