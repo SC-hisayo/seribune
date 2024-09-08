@@ -32,15 +32,29 @@ header {
   z-index: 10000;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
 .navbar {
   background-color: rgb(255, 255, 255);
   border-bottom: solid 1px #000000;
 }
-.navbar a {
-  color: #000000;
-}
 .navbar h1 {
-  margin: 0;
   font-size: x-large;
 }
 .navbar .collapse {
@@ -80,44 +94,45 @@ header {
   margin-bottom: 50px;
 }
 
-.box {
-  margin-top: 50px;
-}
-.box .session-title {
+.session-title {
   font-size: calc(10px + 1.2vw);
   display: flex;
   justify-content: center;
   margin: 0;
 }
-.box .session-title-bg {
+
+.session-title-bg {
   margin: 0 10px;
   -o-object-fit: cover;
      object-fit: cover;
   width: 30%;
 }
-.box .content {
+
+.box {
   margin-top: 50px;
 }
-.box .content .content-text {
+
+.content {
+  margin-top: 50px;
+}
+.content .content-text {
+  margin-top: 50px;
+  margin-bottom: 0;
   padding: 0 100px;
 }
 @media screen and (max-width: 768px) {
-  .box .content .content-text {
+  .content .content-text {
     padding: 0;
   }
 }
-.box .content li {
-  list-style: none;
+.content li {
   margin-bottom: 20px;
 }
-.box .content li:last-child {
+.content li a {
+  text-decoration: underline;
+}
+.content li:last-child {
   margin-bottom: 0;
-}
-.box .content a {
-  color: #000000;
-}
-.box .content p {
-  margin-top: 50px;
 }
 
 .panel {
@@ -137,7 +152,12 @@ header {
   text-align: left;
   font-size: calc(10px + 0.5vw);
   margin-left: 20px;
-  text-decoration: none;
+}
+.panel .panel-title {
+  margin: 0;
+}
+.panel .panel-text {
+  margin-top: 20px;
 }
 .panel:last-child {
   border-bottom: dotted 1px #000000;
@@ -197,5 +217,6 @@ footer {
   color: gray;
 }
 .single .single-metadata a {
-  text-decoration: none;
+  text-decoration: underline;
+  color: gray;
 }/*# sourceMappingURL=style.css.map */
