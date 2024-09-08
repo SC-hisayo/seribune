@@ -1,5 +1,12 @@
+@charset "UTF-8";
 /*
 Theme Name: seribune
+*/
+/*
+  # 適用範囲
+  - Top page
+  - Header
+  - Footer
 */
 * {
   margin: 0;
@@ -61,7 +68,8 @@ header {
   justify-content: center;
 }
 .container .top-img img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 80%;
 }
 .container section {
@@ -82,7 +90,8 @@ header {
 }
 .box .session-title-bg {
   margin: 0 10px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 30%;
 }
 .box .content {
@@ -119,7 +128,8 @@ header {
   padding-bottom: 50px;
 }
 .panel .panel-image {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 25%;
 }
 .panel .panel-body {
@@ -147,9 +157,32 @@ footer .ft-content .ft-title {
   color: dimgray;
 }
 footer .ft-content .sns-img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 30px;
   margin-left: 30px;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*
+  # 適用範囲
+  - single page
+*/
+.single .single-title {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+.single .single-metadata {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0;
+}
+.single .single-metadata p {
+  margin: 0;
+  font-size: small;
+  color: gray;
+}
+.single .single-metadata a {
+  text-decoration: none;
+}/*# sourceMappingURL=style.css.map */
