@@ -28,11 +28,10 @@
 
 <body>
   <header>
-
-    <nav class="navbar navbar-expand-md bg-nav" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-md">
       <div class="container-xl">
-        <a class="navbar-brand nav-text" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-          <h1 class="fs-2"><?php bloginfo('name'); ?></h1>
+        <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+          <h1><?php bloginfo('name'); ?></h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
           aria-controls="navbar" aria-expanded="false" aria-label="ナビゲーションの切替">
@@ -43,21 +42,20 @@
           <ul class="nav-ul">
 
             <li class="nav-item">
-              <a class="nav-link nav-textlink" href="<?php echo esc_url( home_url( '/' ) ); ?>#news">お知らせ</a>
+              <a class="nav-link" href="<?php echo esc_url( home_url( '/' ) ); ?>#news">お知らせ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-textlink" href="<?php echo esc_url( home_url( '/' ) ); ?>#kyoukai">協会について</a>
+              <a class="nav-link" href="<?php echo esc_url( home_url( '/' ) ); ?>#kyoukai">協会について</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-textlink" href="<?php echo esc_url( home_url( '/' ) ); ?>#active">活動内容</a>
+              <a class="nav-link" href="<?php echo esc_url( home_url( '/' ) ); ?>#active">活動内容</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-textlink" href="<?php echo esc_url( home_url( '/' ) ); ?>#ivent">ご案内</a>
+              <a class="nav-link" href="<?php echo esc_url( home_url( '/' ) ); ?>#ivent">ご案内</a>
             </li>
 
           </ul>
         </div>
       </div>
     </nav>
-
   </header>
