@@ -40,7 +40,7 @@ header {
   color: #000000;
 }
 .navbar h1 {
-  margin-left: 40px;
+  margin: 0;
   font-size: x-large;
 }
 .navbar .collapse {
@@ -68,8 +68,7 @@ header {
   justify-content: center;
 }
 .container .top-img img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 80%;
 }
 .container section {
@@ -87,11 +86,11 @@ header {
   font-size: calc(10px + 1.2vw);
   display: flex;
   justify-content: center;
+  margin: 0;
 }
 .box .session-title-bg {
   margin: 0 10px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 30%;
 }
 .box .content {
@@ -128,8 +127,7 @@ header {
   padding-bottom: 50px;
 }
 .panel .panel-image {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 25%;
 }
 .panel .panel-body {
@@ -146,21 +144,32 @@ footer {
   background-color: rgb(255, 255, 255);
   border-top: solid 1px #000000;
 }
-footer .ft-content {
+
+.ft-content {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  margin-top: 40px;
+  padding: 10px 0;
 }
-footer .ft-content .ft-title {
+.ft-content > * {
+  display: flex;
+  align-items: center;
+}
+.ft-content .ft-title {
+  margin: 0;
   font-size: calc(5px + 1.2vw);
   color: dimgray;
 }
-footer .ft-content .sns-img {
-  -o-object-fit: cover;
-     object-fit: cover;
+.ft-content .tf-sns {
+  margin-left: 10px;
+}
+.ft-content .tf-sns img {
   height: 30px;
-  margin-left: 30px;
+  object-fit: cover;
+}
+@media screen and (max-width: 768px) {
+  .ft-content .tf-sns img {
+    height: 20px;
+  }
 }
 
 /*
@@ -185,4 +194,6 @@ footer .ft-content .sns-img {
 }
 .single .single-metadata a {
   text-decoration: none;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

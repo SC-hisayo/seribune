@@ -1,5 +1,12 @@
+@charset "UTF-8";
 /*
 Theme Name: seribune
+*/
+/*
+  # 適用範囲
+  - Top page
+  - Header
+  - Footer
 */
 * {
   margin: 0;
@@ -33,7 +40,7 @@ header {
   color: #000000;
 }
 .navbar h1 {
-  margin-left: 40px;
+  margin: 0;
   font-size: x-large;
 }
 .navbar .collapse {
@@ -80,6 +87,7 @@ header {
   font-size: calc(10px + 1.2vw);
   display: flex;
   justify-content: center;
+  margin: 0;
 }
 .box .session-title-bg {
   margin: 0 10px;
@@ -139,19 +147,55 @@ footer {
   background-color: rgb(255, 255, 255);
   border-top: solid 1px #000000;
 }
-footer .ft-content {
+
+.ft-content {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  margin-top: 40px;
+  padding: 10px 0;
 }
-footer .ft-content .ft-title {
+.ft-content > * {
+  display: flex;
+  align-items: center;
+}
+.ft-content .ft-title {
+  margin: 0;
   font-size: calc(5px + 1.2vw);
   color: dimgray;
 }
-footer .ft-content .sns-img {
+.ft-content .tf-sns {
+  margin-left: 10px;
+}
+.ft-content .tf-sns img {
+  height: 30px;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 30px;
-  margin-left: 30px;
+}
+@media screen and (max-width: 768px) {
+  .ft-content .tf-sns img {
+    height: 20px;
+  }
+}
+
+/*
+  # 適用範囲
+  - single page
+*/
+.single .single-title {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+.single .single-metadata {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0;
+}
+.single .single-metadata p {
+  margin: 0;
+  font-size: small;
+  color: gray;
+}
+.single .single-metadata a {
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */
