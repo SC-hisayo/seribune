@@ -32,13 +32,7 @@ header {
   z-index: 10000;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+h1, h2, h3, h4, h5, h6, p, ul {
   margin: 0;
 }
 
@@ -254,5 +248,38 @@ footer {
   font-size: small;
 }
 .single .single-metadata a {
+  color: #000000;
   text-decoration: underline;
+}
+.single h1, .single h2, .single h3, .single h4, .single h5, .single h6, .single p {
+  margin-top: 1rem;
+}
+.single a {
+  color: blue;
+  text-decoration: underline;
+}
+.single img {
+  margin-top: 1rem;
+}
+.single ul {
+  margin: 0;
+  margin-top: 1rem;
+}
+.single li {
+  list-style: inside;
+}
+.single table {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+}
+.single th {
+  font-weight: bold;
+}
+.single th, .single td {
+  border-bottom: dashed 1px #ddd;
+  padding: 1rem;
+}
+.single tr:nth-child(even) {
+  background-color: #f2f2f2;
 }/*# sourceMappingURL=style.css.map */
