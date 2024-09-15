@@ -37,13 +37,7 @@ header {
   z-index: 10000;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+h1,h2,h3,h4,h5,h6,p,ul {
   margin: 0;
 }
 
@@ -243,7 +237,40 @@ footer {
       font-size: small;
     }
     a {
+      color: $color;
       text-decoration: underline;
     }
+  }
+  h1,h2,h3,h4,h5,h6,p {
+    margin-top: 1rem;
+  }
+  a {
+    color: blue;
+    text-decoration: underline;
+  }
+  img {
+    margin-top: 1rem;
+  }
+  ul {
+    margin: 0;
+    margin-top: 1rem;
+  }
+  li {
+    list-style: inside;
+  }
+  table {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+  }
+  th {
+    font-weight: bold;
+  }
+  th,td {
+    border-bottom: dashed 1px #ddd;
+    padding: 1rem;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
   }
 }
