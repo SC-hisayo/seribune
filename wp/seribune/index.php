@@ -20,7 +20,7 @@
             <?php if (have_posts()) : ?>
               <?php while (have_posts()) : the_post(); ?>
                 <li>
-                  <a href="<?php the_permalink() ?>"><?php the_date() ?> <?php the_title(); ?></a>
+                  <a href="<?php the_permalink() ?>"><?php the_time('Y/m/d') ?> <?php the_title(); ?></a>
                 </li>
               <?php endwhile; ?>
             <?php else : ?>
@@ -77,10 +77,27 @@
           <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
               <a class="panel" href="<?php the_permalink(); ?>">
-                <img src="<?php the_post_thumbnail_url(); ?>" alt="" class="panel-image">
+                <div class="panel-img">
+                  <!-- アイキャッチ画像判定、 なければ固定画像を取得-->
+                  <?php if (has_post_thumbnail()) : ?>
+                    <img src="<?php the_post_thumbnail_url('small'); ?>" alt="">
+                  <?php else : ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/S__41877524.jpg" alt="">
+                  <?php endif; ?>
+                </div>
                 <div class="panel-body">
                   <h3 class="panel-title"><?php the_title(); ?></h3>
-                  <p class="panel-text">2024年度で49回目を迎えた伝統ある大会市が主催し当協会は主管として参加。</p>
+                  <p class="panel-text">
+                    <!-- 抜粋判定、なければ本文の先頭50文字を取得してくる -->
+                    <?php if (has_excerpt()) : ?>
+                      <?php echo get_the_excerpt(); ?>
+                    <?php else : ?>
+                      これには抜粋が設定されていません。
+                    <?php endif; ?>
+                  </p>
+                  <div class="panel-metadata">
+                    <p class="panel-create-date"><time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y/m/d'); ?></time></p>
+                  </div>
                 </div>
               </a>
             <?php endwhile; ?>
