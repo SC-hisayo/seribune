@@ -12,6 +12,15 @@
             <p>更新日: <time datetime="<?php the_modified_time('Y-m-d'); ?>"><?php the_modified_date(); ?></time></p>
             <p><?php the_category(', '); ?></p>
           </div>
+          <div class="single-eye-catch">
+            <!-- アイキャッチ画像判定、 なければ固定画像を取得-->
+            <?php if (has_post_thumbnail()) : ?>
+              <img src="<?php the_post_thumbnail_url('small'); ?>" alt="">
+            <?php else : ?>
+              <img src="<?php echo get_template_directory_uri(); ?>/images/S__41877524.jpg" alt="">
+            <?php endif; ?>
+          </div>
+          <!-- 本文 -->
           <?php the_content('Read more'); ?>
         <?php endwhile; ?>
       <?php endif; ?>
