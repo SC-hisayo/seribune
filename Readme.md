@@ -17,6 +17,8 @@ https://localhost:8080 で確認することができます。
 
 カスタムテーマをインストールし、デザインや動作を確認します。
 
+管理画面URLは https://localhost:8080/wp-login.php です。
+
 ### Required
 
 * VScode

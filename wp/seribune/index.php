@@ -1,5 +1,34 @@
 <?php get_header(); ?>
 
+<!-- 投稿データ取得クエリを作成 -->
+
+<?php
+
+// 除外カテゴリ
+$excludeCategory = ['active', 'ivent',];
+
+// 除外カテゴリからIDを取得
+$exclude_ids = array_map(function ($excludeCategory) {
+  $category = get_category_by_slug($excludeCategory);
+  return $category ? $category->term_id : null;
+}, $excludeCategory);
+
+// 有効なカテゴリIDのみ取得
+$exclude_ids = array_filter($exclude_ids);
+
+$newsQuery = new WP_Query([
+  'category__not_in' => $exclude_ids,
+  'posts_per_page' => 5,
+]);
+$activeQuery = new WP_Query([
+  'category_name' => 'active',
+  'posts_per_page' => 5,
+]);
+$iventQuery = new WP_Query([
+  'category_name' => 'ivent',
+  'posts_per_page' => 5,
+]);
+?>
 <main>
 
   <div class="container">
@@ -17,8 +46,8 @@
         </h2>
         <div class="content">
           <ul class="content-text">
-            <?php if (have_posts()) : ?>
-              <?php while (have_posts()) : the_post(); ?>
+            <?php if ($newsQuery->have_posts()) : ?>
+              <?php while ($newsQuery->have_posts()) : $newsQuery->the_post(); ?>
                 <li>
                   <a href="<?php the_permalink() ?>"><?php the_time('Y/m/d') ?> <?php the_title(); ?></a>
                 </li>
@@ -28,6 +57,7 @@
                 <p>記事がありません</p>
               </li>
             <?php endif; ?>
+            <?php wp_reset_postdata(); ?>
           </ul>
         </div>
       </div>
@@ -74,8 +104,8 @@
         </h2>
 
         <div class="content">
-          <?php if (have_posts()) : ?>
-            <?php while (have_posts()) : the_post(); ?>
+          <?php if ($activeQuery->have_posts()) : ?>
+            <?php while ($activeQuery->have_posts()) : $activeQuery->the_post(); ?>
               <a class="panel" href="<?php the_permalink(); ?>">
                 <div class="panel-img">
                   <!-- アイキャッチ画像判定、 なければ固定画像を取得-->
@@ -104,6 +134,7 @@
           <?php else : ?>
             <p>記事がありません</p>
           <?php endif; ?>
+          <?php wp_reset_postdata(); ?>
 
         </div>
 
@@ -120,13 +151,14 @@
 
         <div class="content">
           <div class="d-grid gap-2 col-6 mx-auto btn-ivent">
-            <?php if (have_posts()) : ?>
-              <?php while (have_posts()) : the_post(); ?>
+            <?php if ($iventQuery->have_posts()) : ?>
+              <?php while ($iventQuery->have_posts()) : $iventQuery->the_post(); ?>
                 <a class="btn btn-info" type="button" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
               <?php endwhile; ?>
             <?php else : ?>
               <p>記事がありません</p>
             <?php endif; ?>
+            <?php wp_reset_postdata(); ?>
 
           </div>
         </div>
