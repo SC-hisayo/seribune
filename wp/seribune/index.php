@@ -4,8 +4,8 @@
 
 <?php
 
-// 除外カテゴリ
-$excludeCategory = ['active', 'ivent',];
+$excludeCategory = ['active', 'ivent',]; // 除外カテゴリ
+$postsLimit = 5; // 一覧表示数
 
 // 除外カテゴリからIDを取得
 $exclude_ids = array_map(function ($excludeCategory) {
@@ -16,18 +16,33 @@ $exclude_ids = array_map(function ($excludeCategory) {
 // 有効なカテゴリIDのみ取得
 $exclude_ids = array_filter($exclude_ids);
 
+// お知らせ、活動内容、イベントのクエリを作成
 $newsQuery = new WP_Query([
   'category__not_in' => $exclude_ids,
-  'posts_per_page' => 5,
+  'posts_per_page' => $postsLimit,
+]);
+$newsCountQuery = new WP_Query([
+  'category__not_in' => $exclude_ids,
 ]);
 $activeQuery = new WP_Query([
   'category_name' => 'active',
-  'posts_per_page' => 5,
+  'posts_per_page' => $postsLimit,
+]);
+$activeCountQuery = new WP_Query([
+  'category_name' => 'active',
 ]);
 $iventQuery = new WP_Query([
   'category_name' => 'ivent',
-  'posts_per_page' => 5,
+  'posts_per_page' => $postsLimit,
 ]);
+$iventCountQuery = new WP_Query([
+  'category_name' => 'ivent',
+]);
+
+// カテゴリIDの取得
+$newsCategoryId = get_category_by_slug('news')->term_id;
+$activeCategoryId = get_category_by_slug('active')->term_id;
+$iventCategoryId = get_category_by_slug('ivent')->term_id;
 ?>
 <main>
 
@@ -52,9 +67,16 @@ $iventQuery = new WP_Query([
                   <a href="<?php the_permalink() ?>"><?php the_time('Y/m/d') ?> <?php the_title(); ?></a>
                 </li>
               <?php endwhile; ?>
+              <?php if ($newsCountQuery->post_count > $postsLimit) : ?>
+                <?php if ($newsCategoryId) : ?>
+                  <a class="more-link" href="<?php echo get_category_link($newsCategoryId); ?>">もっと見る</a>
+                <?php else : ?>
+                  <p>newsカテゴリがありません。</p>
+                <?php endif; ?>
+              <?php endif; ?>
             <?php else : ?>
               <li>
-                <p>記事がありません</p>
+                <p>記事がありません。</p>
               </li>
             <?php endif; ?>
             <?php wp_reset_postdata(); ?>
@@ -131,6 +153,13 @@ $iventQuery = new WP_Query([
                 </div>
               </a>
             <?php endwhile; ?>
+            <?php if ($activeCountQuery->post_count > $postsLimit) : ?>
+              <?php if ($activeCategoryId) : ?>
+                <a class="more-link" href="<?php echo get_category_link($activeCategoryId); ?>">もっと見る</a>
+              <?php else : ?>
+                <p>activeカテゴリがありません。</p>
+              <?php endif; ?>
+            <?php endif; ?>
           <?php else : ?>
             <p>記事がありません</p>
           <?php endif; ?>
@@ -155,6 +184,13 @@ $iventQuery = new WP_Query([
               <?php while ($iventQuery->have_posts()) : $iventQuery->the_post(); ?>
                 <a class="btn btn-info" type="button" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
               <?php endwhile; ?>
+              <?php if ($iventCountQuery->post_count > $postsLimit) : ?>
+                <?php if ($iventCategoryId) : ?>
+                  <a class="more-link" href="<?php echo get_category_link($iventCategoryId); ?>">もっと見る</a>
+                <?php else : ?>
+                  <p>iventカテゴリがありません。</p>
+                <?php endif; ?>
+              <?php endif; ?>
             <?php else : ?>
               <p>記事がありません</p>
             <?php endif; ?>
